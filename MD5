@@ -1,0 +1,11 @@
+e87b3a47618b25137dc06572db6e450a *DESCRIPTION
+ea97b7ae359695d0d09fac218bc23c3d *NAMESPACE
+af62b1900137628213553af6575c2bf8 *NEWS
+cbab8f0b2fa8be6713047c0c24c784c8 *R/data.R
+c35ff6ce10e2a492f55f698363c15830 *R/nohelp.R
+10f5dee096818915a6bbf0e70a07443f *R/ppgam.R
+63567edb289d34550ce3e8459a48e910 *data/USlandfall.rda
+2cb9835b42bd32835b5a7eb414f7a501 *data/windstorm.rda
+de059f97789a415c90414abf78363554 *man/USlandfall.Rd
+7d8b5f8348fbd968dce259a4f9f1ff7e *man/ppgam.Rd
+f11d48ad90b916179b6c9c0fe13a98a9 *man/windstorm.Rd
