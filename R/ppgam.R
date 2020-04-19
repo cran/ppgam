@@ -206,8 +206,8 @@ if (use.data) {
 }
 
 class(G) <- c("gam", "glm", "lm")
-p <- ncol(G$X)
-G$coefficients <- numeric(p)
+G$nb <- ncol(G$X)
+G$coefficients <- numeric(G$nb)
 G$wts <- weights
 
 # now sort design matrices
@@ -222,7 +222,7 @@ G$control <- .control.ppgam()
 
 beta <- .give_beta0(G)
 rho0 <- numeric(length(G$sp))
-G$Sd <- evgam:::.joinSmooth(list(G$smooth))
+G$Sd <- evgam:::.joinSmooth(list(G))
 G$S <- evgam:::.makeS(G$Sd, rho0)
 G$null.deviance <- -.f(beta, G)
 attr(rho0, "beta") <- beta
@@ -252,7 +252,7 @@ if (!with.response) G$formula <- formula0
 G$family$no.r.sq <- TRUE
 G$gcv.ubre <- as.vector(fit.reml$objective)
 set.seed(1)
-n.samp <- max(1e3, 2 * p)
+n.samp <- max(1e3, 2 * G$nb)
 if (n.samp < nrow(G$X)) {
   G$R <- G$X[sample(nrow(G$X), n.samp, replace=FALSE),]
 } else {
